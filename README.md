@@ -286,7 +286,7 @@ kubectl delete -f k8s/
 
 -----------------------------------------------------------------
 
-# Project10: Terraform AWS EC2 Deployment assessment zip
+# Project10: Terraform AWS EC2 Deployment terraform-project zip
 
 ## Overview
 Terraform HCL configs defining AWS infrastructure as code.
