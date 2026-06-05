@@ -285,3 +285,45 @@ kubectl delete -f k8s/
 - Add alerts when pod count hits the maximum of 8
 
 -----------------------------------------------------------------
+
+# Project10: Terraform AWS EC2 Deployment assessment zip
+
+## Overview
+Terraform HCL configs defining AWS infrastructure as code.
+Practiced the full terraform workflow with GitHub Actions automating
+lint, plan, and apply on every push.
+
+## Project structure
+terraform-project/
+├── main.tf
+├── terraform.tfstate
+├── terraform.tfstate.backup
+├── .terraform.lock.hcl
+└── .github/workflows/
+├── lint.yml
+├── plan.yml
+└── apply.yml
+
+## Pipeline
+git push → lint.yml (fmt + validate) → plan.yml (preview) → apply.yml (create)
+
+## Commands
+```bash
+terraform init      # download providers
+terraform fmt       # fix formatting
+terraform validate  # check syntax
+terraform plan      # preview changes
+terraform apply     # create infrastructure
+terraform destroy   # delete everything
+```
+
+## What I learned
+- Writing infrastructure as HCL instead of clicking in a console
+- The plan → apply → destroy lifecycle
+- Reading and fixing HCL syntax errors from terraform validate
+- Automating lint, plan, and apply using GitHub Actions
+
+## What I'd improve next
+- Add variables.tf and outputs.tf to make configs reusable
+- Connect to real AWS and deploy an actual EC2 instance
+- Add remote backend to store state safely in the cloud
